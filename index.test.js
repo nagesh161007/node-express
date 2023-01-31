@@ -24,7 +24,7 @@ describe("POST user API /", function () {
 
 describe("UPDATE user API /", function () {
   test("Check if POST user API sending bad request", async function () {
-    const response = await request(app).put("/v1/user/1").auth("test", "test");
-    expect(response.status).toEqual(401);
+    const response = await request(app).put("/v1/user/1");
+    expect(response.status).toEqual(403);
   });
 });
