@@ -1,9 +1,10 @@
 import db from "../config/dbConfig.js";
 
-function connectDatabase() {
-  db.sync();
+async function connectDatabase() {
+  await db.sync();
 
-  db.authenticate()
+  await db
+    .authenticate()
     .then(() => console.log("Database connected."))
     .catch((err) => console.log("Error: " + err));
 }
